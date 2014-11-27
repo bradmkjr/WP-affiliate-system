@@ -38,7 +38,7 @@ class WPASSettingsPage
     public function create_admin_page()
     {
         // Set class property
-        $this->options = get_option( 'my_option_name' );
+        $this->options = get_option( 'wpsa_option_name' );
         ?>
         <div class="wrap">
             <?php screen_icon(); ?>
@@ -46,7 +46,7 @@ class WPASSettingsPage
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
-                settings_fields( 'my_option_group' );   
+                settings_fields( 'wpsa_option_group' );   
                 do_settings_sections( 'my-setting-admin' );
                 submit_button(); 
             ?>
@@ -61,8 +61,8 @@ class WPASSettingsPage
     public function page_init()
     {        
         register_setting(
-            'imgur_option_group', // Option group
-            'imgur_option_name', // Option name
+            'wpsa_option_group', // Option group
+            'wpsa_option_name', // Option name
             array( $this, 'sanitize' ) // Sanitize
         );
 
@@ -74,12 +74,20 @@ class WPASSettingsPage
         );  
 
         add_settings_field(
-            'id_number', // ID
+            'imgur_client_id', // ID
             __('Client ID','wp-affiliate-system'), // Title 
-            array( $this, 'id_number_callback' ), // Callback
+            array( $this, 'imgur_client_id_callback' ), // Callback
             'my-setting-admin', // Page
             'imgur_section_id' // Section           
-        );      
+        );
+
+        add_settings_field(
+            'imgur_client_secret', // ID
+            __('Client Secret','wp-affiliate-system'), // Title 
+            array( $this, 'imgur_client_secret_callback' ), // Callback
+            'my-setting-admin', // Page
+            'imgur_section_id' // Section           
+        );              
 
         
         //
@@ -98,12 +106,28 @@ class WPASSettingsPage
         );  
 
         add_settings_field(
-            'id_number', // ID
-            __('Associate ID','wp-affiliate-system'), // Title 
-            array( $this, 'id_number_callback' ), // Callback
+            'amazon_access_key_id', // ID
+            __('Amazon Access Key ID','wp-affiliate-system'), // Title 
+            array( $this, 'amazon_access_key_id_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_section_id' // Section           
-        );      
+        );
+        
+        add_settings_field(
+            'amazon_secret_accesss_key', // ID
+            __('Amazon Secret Access Key','wp-affiliate-system'), // Title 
+            array( $this, 'amazon_secret_accesss_key_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_section_id' // Section           
+        ); 
+        
+        add_settings_field(
+            'amazon_associate_id', // ID
+            __('Amazon Associates ID','wp-affiliate-system'), // Title 
+            array( $this, 'amazon_associate_id_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_section_id' // Section           
+        );              
 
     }
 
@@ -115,8 +139,22 @@ class WPASSettingsPage
     public function sanitize( $input )
     {
         $new_input = array();
-        if( isset( $input['id_number'] ) )
-            $new_input['id_number'] = absint( $input['id_number'] );
+        
+        if( isset( $input['imgur_client_id'] ) )
+            $new_input['imgur_client_id'] = sanitize_text_field( $input['imgur_client_id'] );
+
+		if( isset( $input['imgur_client_secret'] ) )
+            $new_input['imgur_client_secret'] = sanitize_text_field( $input['imgur_client_secret'] );
+
+		if( isset( $input['amazon_access_key_id'] ) )
+            $new_input['amazon_access_key_id'] = sanitize_text_field( $input['amazon_access_key_id'] );
+
+		if( isset( $input['amazon_secret_accesss_key'] ) )
+            $new_input['amazon_secret_accesss_key'] = sanitize_text_field( $input['amazon_secret_accesss_key'] );
+
+		if( isset( $input['amazon_associate_id'] ) )
+            $new_input['amazon_associate_id'] = sanitize_text_field( $input['amazon_associate_id'] );
+
 
         if( isset( $input['title'] ) )
             $new_input['title'] = sanitize_text_field( $input['title'] );
@@ -135,13 +173,57 @@ class WPASSettingsPage
     /** 
      * Get the settings option array and print one of its values
      */
-    public function id_number_callback()
+    public function imgur_client_id_callback()
     {
         printf(
-            '<input type="text" id="id_number" name="my_option_name[id_number]" value="%s" />',
-            isset( $this->options['id_number'] ) ? esc_attr( $this->options['id_number']) : ''
+            '<input type="text" id="imgur_client_id" name="wpsa_option_name[imgur_client_id]" value="%s" />',
+            isset( $this->options['imgur_client_id'] ) ? esc_attr( $this->options['imgur_client_id']) : ''
         );
     }
+    
+    /** 
+     * Get the settings option array and print one of its values
+     */
+    public function imgur_client_secret_callback()
+    {
+        printf(
+            '<input type="text" id="imgur_client_secret" name="wpsa_option_name[imgur_client_secret]" value="%s" />',
+            isset( $this->options['imgur_client_secret'] ) ? esc_attr( $this->options['imgur_client_secret']) : ''
+        );
+    }
+    
+    /** 
+     * Get the settings option array and print one of its values
+     */
+    public function amazon_access_key_id_callback()
+    {
+        printf(
+            '<input type="text" id="amazon_access_key_id" name="wpsa_option_name[amazon_access_key_id]" value="%s" />',
+            isset( $this->options['amazon_access_key_id'] ) ? esc_attr( $this->options['amazon_access_key_id']) : ''
+        );
+    }
+    
+    /** 
+     * Get the settings option array and print one of its values
+     */
+    public function amazon_secret_accesss_key_callback()
+    {
+        printf(
+            '<input type="text" id="amazon_secret_accesss_key" name="wpsa_option_name[amazon_secret_accesss_key]" value="%s" />',
+            isset( $this->options['amazon_secret_accesss_key'] ) ? esc_attr( $this->options['amazon_secret_accesss_key']) : ''
+        );
+    }  
+    
+    /** 
+     * Get the settings option array and print one of its values
+     */
+    public function amazon_associate_id_callback()
+    {
+        printf(
+            '<input type="text" id="amazon_associate_id" name="wpsa_option_name[amazon_associate_id]" value="%s" />',
+            isset( $this->options['amazon_associate_id'] ) ? esc_attr( $this->options['amazon_associate_id']) : ''
+        );
+    }        
 
     /** 
      * Get the settings option array and print one of its values
@@ -149,7 +231,7 @@ class WPASSettingsPage
     public function title_callback()
     {
         printf(
-            '<input type="text" id="title" name="my_option_name[title]" value="%s" />',
+            '<input type="text" id="title" name="wpsa_option_name[title]" value="%s" />',
             isset( $this->options['title'] ) ? esc_attr( $this->options['title']) : ''
         );
     }

@@ -16,7 +16,7 @@ Version:           3.1.0
 Author:            Bradford Knowlton
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:       github-updater
+Text Domain:       wp-affiliate-system
 GitHub Plugin URI: https://github.com/bradmkjr/WP-affiliate-system
 GitHub Branch:     master
 Requires WP:       4.0.1
@@ -29,6 +29,11 @@ Requires WP:       4.0.1
 * ========================================================================== */
 
 defined('ABSPATH') or die("No script kiddies please!");
+
+function wpas_init() {
+ load_plugin_textdomain('wp-affiliate-system', false, basename( dirname( __FILE__ ) ) . '/languages' );
+}
+add_action('plugins_loaded', 'wpas_init');
 
 if(!class_exists('WPASSettingsPage')){
 	include( plugin_dir_path( __FILE__ ) . 'includes/settings.inc.php');
