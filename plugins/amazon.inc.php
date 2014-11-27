@@ -14,7 +14,10 @@ class WPASAmazon{
     public function __construct()
     {
     	$this->options = get_option( 'wpsa_option_name' );
-        add_shortcode( 'wpas_amazon', array($this, 'wpas_amazon') );
-        add_shortcode( 'wpas_imgur', array($this, 'wpas_imgur') );
+
+    }
+    
+    public function output(){
+	    return "Amazon Class";
     }
 }
