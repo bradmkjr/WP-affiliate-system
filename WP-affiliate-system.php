@@ -12,7 +12,7 @@
 Plugin Name:       WP Affiliate System
 Plugin URI:        https://github.com/bradmkjr/WP-affiliate-system
 Description:       Top Secret
-Version:           3.1.0
+Version:           3.1.1
 Author:            Bradford Knowlton
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
