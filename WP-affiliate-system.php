@@ -12,14 +12,14 @@
 Plugin Name:       WP Affiliate System
 Plugin URI:        https://github.com/bradmkjr/WP-affiliate-system
 Description:       Top Secret
-Version:           3.1.5
+Version:           4.0.1
 Author:            Bradford Knowlton
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:       wp-affiliate-system
 GitHub Plugin URI: https://github.com/bradmkjr/WP-affiliate-system
 GitHub Branch:     master
-Requires WP:       4.0.1
+Requires WP:       4.8.1
 */
 
 /* == NOTICE ===================================================================
@@ -43,6 +43,9 @@ if(!class_exists('WPASShortcodes')){
 	require_once plugin_dir_path( __FILE__ ) . 'includes/shortcodes.inc.php';
 }
 
+if(!class_exists('WPASPost')){
+	require_once plugin_dir_path( __FILE__ ) . 'includes/posts.inc.php';
+}
 
 if(!class_exists('WPASAmazon')){
 	require_once plugin_dir_path( __FILE__ ) . 'plugins/amazon.inc.php';
@@ -51,3 +54,4 @@ if(!class_exists('WPASAmazon')){
 if(!class_exists('WPASImgur')){
 	require_once plugin_dir_path( __FILE__ ) . 'plugins/imgur.inc.php';
 }
+

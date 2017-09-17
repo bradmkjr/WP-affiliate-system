@@ -1,0 +1,199 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WP Affiliate System\n"
+"POT-Creation-Date: 2017-09-17 16:34-0600\n"
+"PO-Revision-Date: 2017-09-17 16:34-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: WP-affiliate-system.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/posts.inc.php:31 includes/posts.inc.php:42
+msgctxt "wp-affiliate-system"
+msgid "Products"
+msgstr ""
+
+#: includes/posts.inc.php:32
+msgctxt "wp-affiliate-system"
+msgid "Product"
+msgstr ""
+
+#: includes/posts.inc.php:33
+msgctxt "wp-affiliate-system"
+msgid "Add New"
+msgstr ""
+
+#: includes/posts.inc.php:34
+msgctxt "wp-affiliate-system"
+msgid "Add New Product"
+msgstr ""
+
+#: includes/posts.inc.php:35
+msgctxt "wp-affiliate-system"
+msgid "Edit Product"
+msgstr ""
+
+#: includes/posts.inc.php:36
+msgctxt "wp-affiliate-system"
+msgid "New Product"
+msgstr ""
+
+#: includes/posts.inc.php:37
+msgctxt "wp-affiliate-system"
+msgid "View Product"
+msgstr ""
+
+#: includes/posts.inc.php:38
+msgctxt "wp-affiliate-system"
+msgid "Search Products"
+msgstr ""
+
+#: includes/posts.inc.php:39
+msgctxt "wp-affiliate-system"
+msgid "No products found"
+msgstr ""
+
+#: includes/posts.inc.php:40
+msgctxt "wp-affiliate-system"
+msgid "No products found in Trash"
+msgstr ""
+
+#: includes/posts.inc.php:41
+msgctxt "wp-affiliate-system"
+msgid "Parent Product:"
+msgstr ""
+
+#: includes/posts.inc.php:69 includes/posts.inc.php:83
+msgctxt "wp-affiliate-system"
+msgid "Product Categories"
+msgstr ""
+
+#: includes/posts.inc.php:70
+msgctxt "wp-affiliate-system"
+msgid "Product Category"
+msgstr ""
+
+#: includes/posts.inc.php:71
+msgctxt "wp-affiliate-system"
+msgid "Search Product Categories"
+msgstr ""
+
+#: includes/posts.inc.php:72
+msgctxt "wp-affiliate-system"
+msgid "Popular Product Categories"
+msgstr ""
+
+#: includes/posts.inc.php:73
+msgctxt "wp-affiliate-system"
+msgid "All Product Categories"
+msgstr ""
+
+#: includes/posts.inc.php:74
+msgctxt "wp-affiliate-system"
+msgid "Parent Product Category"
+msgstr ""
+
+#: includes/posts.inc.php:75
+msgctxt "wp-affiliate-system"
+msgid "Parent Product Category:"
+msgstr ""
+
+#: includes/posts.inc.php:76
+msgctxt "wp-affiliate-system"
+msgid "Edit Product Category"
+msgstr ""
+
+#: includes/posts.inc.php:77
+msgctxt "wp-affiliate-system"
+msgid "Update Product Category"
+msgstr ""
+
+#: includes/posts.inc.php:78
+msgctxt "wp-affiliate-system"
+msgid "Add New Product Category"
+msgstr ""
+
+#: includes/posts.inc.php:79
+msgctxt "wp-affiliate-system"
+msgid "New Product Category"
+msgstr ""
+
+#: includes/posts.inc.php:80
+msgctxt "wp-affiliate-system"
+msgid "Separate sponsor levels with commas"
+msgstr ""
+
+#: includes/posts.inc.php:81
+msgctxt "wp-affiliate-system"
+msgid "Add or remove sponsor levels"
+msgstr ""
+
+#: includes/posts.inc.php:82
+msgctxt "wp-affiliate-system"
+msgid "Choose from the most used sponsor levels"
+msgstr ""
+
+#: includes/posts.inc.php:146
+msgid "ASIN"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: includes/settings.inc.php:27 includes/settings.inc.php:28
+msgid "WP Affiliate System"
+msgstr ""
+
+#: includes/settings.inc.php:45
+msgid "WP Affiliate System Settings"
+msgstr ""
+
+#: includes/settings.inc.php:71
+msgid "Imgur Settings"
+msgstr ""
+
+#: includes/settings.inc.php:78
+msgid "Client ID"
+msgstr ""
+
+#: includes/settings.inc.php:86
+msgid "Client Secret"
+msgstr ""
+
+#: includes/settings.inc.php:103
+msgid "Amazon Settings"
+msgstr ""
+
+#: includes/settings.inc.php:110
+msgid "Amazon Access Key ID"
+msgstr ""
+
+#: includes/settings.inc.php:118
+msgid "Amazon Secret Access Key"
+msgstr ""
+
+#: includes/settings.inc.php:126
+msgid "Amazon Associates ID"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/bradmkjr/WP-affiliate-system"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Top Secret"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Bradford Knowlton"
+msgstr ""
